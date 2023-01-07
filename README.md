@@ -1,8 +1,10 @@
 # NodeSecure Utils
 ![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/NodeSecure/utils/master/package.json&query=$.version&label=Version)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/NodeSecure/utils/commit-activity)
+[![OpenSSF
+Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils/badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils)
 [![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/utils/blob/master/LICENSE)
-![build](https://img.shields.io/github/workflow/status/NodeSecure/utils/Node.js%20CI)
+![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/utils/node.js.yml)
 
 NodeSecure utilities.
 
