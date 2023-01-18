@@ -1,14 +1,16 @@
 # NodeSecure Utils
-![version](https://img.shields.io/badge/dynamic/json.svg?url=https://raw.githubusercontent.com/NodeSecure/utils/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/NodeSecure/utils/commit-activity)
+
+![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/utils/master/package.json&query=$.version&label=Version)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/utils/commit-activity)
 [![OpenSSF
-Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils/badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils)
-[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/NodeSecure/utils/blob/master/LICENSE)
-![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/utils/node.js.yml)
+Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils)
+[![mit](https://img.shields.io/github/license/Naereen/StrapDown.js.svg?style=for-the-badge)](https://github.com/NodeSecure/utils/blob/master/LICENSE)
+![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/utils/node.js.yml?style=for-the-badge)
 
 NodeSecure utilities.
 
 ## Requirements
+
 - [Node.js](https://nodejs.org/en/) v14 or higher
 
 ## Getting Started
@@ -31,11 +33,12 @@ import * as utils from "@nodesecure/utils";
 
 See TypeScript definition file.
 
-
 ## Contributors ✨
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
@@ -63,4 +66,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## License
+
 MIT
