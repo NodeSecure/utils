@@ -1,29 +1,24 @@
-// Import Third-party Dependencies
-import test from "tape";
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+import assert from "node:assert";
 
 // Import Internal Dependencies
 import * as utils from "../index.js";
 
-test("formatBytes should return '0 B' if bytes argument is equal zero", (tape) => {
-  tape.equal(utils.formatBytes(0), "0 B");
+describe("formatBytes", () => {
+  it("should return '0 B' if bytes argument is equal zero", () => {
+    assert.equal(utils.formatBytes(0), "0 B");
+  });
 
-  tape.end();
-});
+  it("should format 10 bytes", () => {
+    assert.equal(utils.formatBytes(10), "10 B");
+  });
 
-test("formatBytes should format 10 bytes", (tape) => {
-  tape.equal(utils.formatBytes(10), "10 B");
+  it("should format 3000 bytes in KB with two fixed number", () => {
+    assert.equal(utils.formatBytes(3000), "2.93 KB");
+  });
 
-  tape.end();
-});
-
-test("formatBytes should format 3000 bytes in KB with two fixed number", (tape) => {
-  tape.equal(utils.formatBytes(3000), "2.93 KB");
-
-  tape.end();
-});
-
-test("formatBytes should format 822_223_900 bytes in MB", (tape) => {
-  tape.equal(utils.formatBytes(822_223_900), "784.13 MB");
-
-  tape.end();
+  it("should format 822_223_900 bytes in MB", () => {
+    assert.equal(utils.formatBytes(822_223_900), "784.13 MB");
+  });
 });
