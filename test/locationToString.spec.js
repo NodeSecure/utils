@@ -1,19 +1,18 @@
-// Import Third-party Dependencies
-import test from "tape";
+// Import Node.js Dependencies
+import { describe, it } from "node:test";
+import assert from "node:assert";
 
 // Import Internal Dependencies
 import * as utils from "../index.js";
 
-test("locationToString should return the location array in string syntax", (tape) => {
-  const str = utils.locationToString([[1, 2], [2, 4]]);
-  tape.equal(str, "[1:2] - [2:4]");
+describe("locationToString", () => {
+  it("should return the location array in string syntax", () => {
+    const str = utils.locationToString([[1, 2], [2, 4]]);
+    assert.equal(str, "[1:2] - [2:4]");
+  });
 
-  tape.end();
-});
-
-test("locationToString should ignore elements after length 1", (tape) => {
-  const str = utils.locationToString([[1, 2, 3], [2, 4, 10], [50]]);
-  tape.equal(str, "[1:2] - [2:4]");
-
-  tape.end();
+  it("should ignore elements after length 1", () => {
+    const str = utils.locationToString([[1, 2, 3], [2, 4, 10], [50]]);
+    assert.equal(str, "[1:2] - [2:4]");
+  });
 });
