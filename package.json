@@ -4,6 +4,9 @@
   "description": "NodeSecure utilities",
   "exports": "./index.js",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "directories": {
     "test": "test"
   },
