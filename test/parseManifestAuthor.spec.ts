@@ -2,8 +2,10 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 
+import { Maintainer } from "@npm/types";
+
 // Import Internal Dependencies
-import * as utils from "../index.js";
+import * as utils from "../src/parseManifestAuthor.js";
 
 describe("parseAuthor", () => {
   it("should be able to parse a string (without email)", () => {
@@ -19,13 +21,33 @@ describe("parseAuthor", () => {
     });
   });
 
+  it("should be able to parse an object matching Maintainer type", () => {
+    const author: Maintainer = {
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com",
+      url: "https://example.com/"
+    };
+    const result = utils.parseAuthor(author);
+    assert.deepEqual(result, author);
+  });
+
+  it("should be able to parse an object not matching Maintainer type", () => {
+    const author = {
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com",
+      unrelatedProperty: "unrelatedValue"
+    };
+    const result = utils.parseAuthor(author);
+    assert.deepEqual(result, author);
+  });
+
   it("should return null for an empty object", () => {
     const result = utils.parseAuthor({});
     assert.strictEqual(result, null);
   });
 
   it("should return null for undefined", () => {
-    const result = utils.parseAuthor(undefined);
+    const result = utils.parseAuthor(undefined as unknown as string);
     assert.strictEqual(result, null);
   });
 });
@@ -77,7 +99,7 @@ describe("parseManifestAuthor", () => {
 
   it("must throw an Error if the argument is not a string", () => {
     try {
-      utils.parseManifestAuthor(null);
+      utils.parseManifestAuthor(null as unknown as string);
     }
     catch (error) {
       assert.strictEqual(error.message, "expected manifestAuthorField to be a string");

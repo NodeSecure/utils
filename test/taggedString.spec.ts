@@ -3,7 +3,7 @@ import { describe, it } from "node:test";
 import assert from "node:assert";
 
 // Import Internal Dependencies
-import * as utils from "../index.js";
+import * as utils from "../src/taggedString.js";
 
 describe("taggedString", () => {
   it("with numeric parameter", () => {
