@@ -32,15 +32,13 @@ describe("parseAuthor", () => {
   });
 
   it("should be able to parse an object not matching Maintainer type", () => {
-    const result = utils.parseAuthor({
+    const author = {
       name: "GENTILHOMME Thomas",
       email: "foobar@gmail.com",
       unrelatedProperty: "unrelatedValue"
-    });
-    assert.deepEqual(result, {
-      name: "GENTILHOMME Thomas",
-      email: "foobar@gmail.com"
-    });
+    };
+    const result = utils.parseAuthor(author);
+    assert.deepEqual(result, author);
   });
 
   it("should return null for an empty object", () => {
