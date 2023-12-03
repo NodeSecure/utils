@@ -1,4 +1,4 @@
-import { Maintainer } from '@npm/types';
+import { Maintainer } from "@npm/types";
 
 export function manifestAuthorRegex(): RegExp {
   return /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
