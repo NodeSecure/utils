@@ -11,12 +11,12 @@ export function parseManifestAuthor(manifestAuthorField) {
   }
 
   if (!/\w/.test(manifestAuthorField)) {
-    return {};
+    return null;
   }
 
   const match = manifestAuthorRegex().exec(manifestAuthorField);
   if (!match) {
-    return {};
+    return null;
   }
   const author = {
     name: match[1]
@@ -34,4 +34,12 @@ export function parseManifestAuthor(manifestAuthorField) {
   }
 
   return author;
+}
+
+export function parseAuthor(author) {
+  if (typeof author === "string") {
+    return parseManifestAuthor(author);
+  }
+
+  return !author || Object.keys(author).length === 0 ? null : author;
 }

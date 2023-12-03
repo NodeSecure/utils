@@ -5,6 +5,31 @@ import assert from "node:assert";
 // Import Internal Dependencies
 import * as utils from "../index.js";
 
+describe("parseAuthor", () => {
+  it("should be able to parse a string (without email)", () => {
+    const result = utils.parseAuthor("GENTILHOMME Thomas");
+    assert.deepEqual(result, { name: "GENTILHOMME Thomas" });
+  });
+
+  it("should be able to parse a string (with email)", () => {
+    const result = utils.parseAuthor("GENTILHOMME Thomas <foobar@gmail.com>");
+    assert.deepEqual(result, {
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com"
+    });
+  });
+
+  it("should return null for an empty object", () => {
+    const result = utils.parseAuthor({});
+    assert.strictEqual(result, null);
+  });
+
+  it("should return null for undefined", () => {
+    const result = utils.parseAuthor(undefined);
+    assert.strictEqual(result, null);
+  });
+});
+
 describe("manifestAuthorRegex", () => {
   it("must return a RegExp", () => {
     const regex = utils.manifestAuthorRegex();
@@ -47,7 +72,7 @@ describe("parseManifestAuthor", () => {
 
   it("empty string must return empty object", () => {
     const result = utils.parseManifestAuthor("");
-    assert.deepEqual(result, {});
+    assert.strictEqual(result, null);
   });
 
   it("must throw an Error if the argument is not a string", () => {
