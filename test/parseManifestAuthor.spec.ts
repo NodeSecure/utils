@@ -2,6 +2,8 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 
+import { Maintainer } from "@npm/types";
+
 // Import Internal Dependencies
 import * as utils from "../src/parseManifestAuthor.js";
 
@@ -13,6 +15,28 @@ describe("parseAuthor", () => {
 
   it("should be able to parse a string (with email)", () => {
     const result = utils.parseAuthor("GENTILHOMME Thomas <foobar@gmail.com>");
+    assert.deepEqual(result, {
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com"
+    });
+  });
+
+  it("should be able to parse an object matching Maintainer type", () => {
+    const author: Maintainer = {
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com",
+      url: "https://example.com/"
+    };
+    const result = utils.parseAuthor(author);
+    assert.deepEqual(result, author);
+  });
+
+  it("should be able to parse an object not matching Maintainer type", () => {
+    const result = utils.parseAuthor({
+      name: "GENTILHOMME Thomas",
+      email: "foobar@gmail.com",
+      unrelatedProperty: "unrelatedValue"
+    });
     assert.deepEqual(result, {
       name: "GENTILHOMME Thomas",
       email: "foobar@gmail.com"

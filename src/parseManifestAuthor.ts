@@ -38,10 +38,14 @@ export function parseManifestAuthor(manifestAuthorField: string): Maintainer | n
   return author;
 }
 
-export function parseAuthor(author: Maintainer | string): Maintainer | null {
+export function parseAuthor(author: string | object): Maintainer | null {
   if (typeof author === "string") {
     return parseManifestAuthor(author);
   }
 
-  return !author || Object.keys(author).length === 0 ? null : author;
+  return (!author || Object.keys(author).length === 0) ? null : ({
+    ...("name" in author && typeof author.name == "string") ? { name: author.name } : {},
+    ...("email" in author && typeof author.email == "string") ? { email: author.email } : {},
+    ...("url" in author && typeof author.url == "string") ? { url: author.url } : {}
+  });
 }
