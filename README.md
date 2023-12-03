@@ -40,6 +40,8 @@ $ yarn add @nodesecure/utils
 
 ```js
 import * as utils from "@nodesecure/utils";
+
+console.log(utils.parseAuthor("GENTILHOMME Thomas <foo.bar@gmail.com>"));
 ```
 
 ## API
