@@ -4,7 +4,6 @@ import assert from "node:assert";
 
 // Import Internal Dependencies
 import * as utils from "../src/parseManifestAuthor.js";
-import { Person } from "../src/types/index.js";
 
 describe("parseAuthor", () => {
   it("should be able to parse a string (without email)", () => {
@@ -21,7 +20,7 @@ describe("parseAuthor", () => {
   });
 
   it("should return null for an empty object", () => {
-    const result = utils.parseAuthor({} as unknown as Person);
+    const result = utils.parseAuthor({});
     assert.strictEqual(result, null);
   });
 
