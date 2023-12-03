@@ -1,4 +1,3 @@
-# NodeSecure Utils
 <p align="center">
   <img src="https://user-images.githubusercontent.com/4438263/287494046-1121d658-3adb-4cca-9751-659e530f5a93.jpg" alt="@nodesecure/utils">
 </p>
