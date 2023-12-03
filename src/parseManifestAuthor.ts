@@ -1,11 +1,13 @@
-export function manifestAuthorRegex() {
+import { Person } from "./types";
+
+export function manifestAuthorRegex(): RegExp {
   return /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
 }
 
 /**
  * @see https://docs.npmjs.com/cli/v7/configuring-npm/package-json#people-fields-author-contributors
  */
-export function parseManifestAuthor(manifestAuthorField) {
+export function parseManifestAuthor(manifestAuthorField: string): Person | null {
   if (typeof manifestAuthorField !== "string") {
     throw new TypeError("expected manifestAuthorField to be a string");
   }
@@ -18,7 +20,7 @@ export function parseManifestAuthor(manifestAuthorField) {
   if (!match) {
     return null;
   }
-  const author = {
+  const author: Person = {
     name: match[1]
   };
 
@@ -36,7 +38,7 @@ export function parseManifestAuthor(manifestAuthorField) {
   return author;
 }
 
-export function parseAuthor(author) {
+export function parseAuthor(author: Person | string): Person | null {
   if (typeof author === "string") {
     return parseManifestAuthor(author);
   }

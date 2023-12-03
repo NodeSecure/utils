@@ -3,7 +3,8 @@ import { describe, it } from "node:test";
 import assert from "node:assert";
 
 // Import Internal Dependencies
-import * as utils from "../index.js";
+import * as utils from "../src/parseManifestAuthor.js";
+import { Person } from "../src/types/index.js";
 
 describe("parseAuthor", () => {
   it("should be able to parse a string (without email)", () => {
@@ -20,12 +21,12 @@ describe("parseAuthor", () => {
   });
 
   it("should return null for an empty object", () => {
-    const result = utils.parseAuthor({});
+    const result = utils.parseAuthor({} as unknown as Person);
     assert.strictEqual(result, null);
   });
 
   it("should return null for undefined", () => {
-    const result = utils.parseAuthor(undefined);
+    const result = utils.parseAuthor(undefined as unknown as string);
     assert.strictEqual(result, null);
   });
 });
@@ -77,7 +78,7 @@ describe("parseManifestAuthor", () => {
 
   it("must throw an Error if the argument is not a string", () => {
     try {
-      utils.parseManifestAuthor(null);
+      utils.parseManifestAuthor(null as unknown as string);
     }
     catch (error) {
       assert.strictEqual(error.message, "expected manifestAuthorField to be a string");

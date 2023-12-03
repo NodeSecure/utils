@@ -9,7 +9,7 @@ const kBytesSize = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
  * formatBytes(10); // 10 B
  * formatBytes(3000); // 2.93 KB
  */
-export function formatBytes(bytes) {
+export function formatBytes(bytes: number): string {
   if (bytes === 0) {
     return "0 B";
   }
