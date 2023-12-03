@@ -1,11 +1,24 @@
-# NodeSecure Utils
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/4438263/287494046-1121d658-3adb-4cca-9751-659e530f5a93.jpg" alt="@nodesecure/utils">
+</p>
 
-![version](https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/utils/master/package.json&query=$.version&label=Version)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge)](https://github.com/NodeSecure/utils/graphs/commit-activity)
-[![OpenSSF
-Scorecard](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils/badge?style=for-the-badge)](https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils)
-[![mit](https://img.shields.io/github/license/NodeSecure/utils.svg?style=for-the-badge)](https://github.com/NodeSecure/utils/blob/master/LICENSE)
-![build](https://img.shields.io/github/actions/workflow/status/NodeSecure/utils/node.js.yml?style=for-the-badge)
+<p align="center">
+    <a href="https://github.com/NodeSecure/utils">
+      <img src="https://img.shields.io/badge/dynamic/json.svg?style=for-the-badge&url=https://raw.githubusercontent.com/NodeSecure/utils/master/package.json&query=$.version&label=Version" alt="npm version">
+    </a>
+    <a href="https://github.com/NodeSecure/utils/graphs/commit-activity">
+      <img src="https://img.shields.io/badge/Maintained%3F-yes-green.svg?style=for-the-badge" alt="maintenance">
+    </a>
+    <a href="https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils">
+      <img src="https://api.securityscorecards.dev/projects/github.com/NodeSecure/utils/badge?style=for-the-badge" alt="ossf scorecard">
+    </a>
+    <a href="https://github.com/NodeSecure/utils/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/NodeSecure/utils.svg?style=for-the-badge" alt="license">
+    </a>
+    <a href="https://github.com/NodeSecure/utils/actions?query=workflow%3A%22Node.js+CI%22">
+      <img src="https://img.shields.io/github/actions/workflow/status/NodeSecure/utils/node.js.yml?style=for-the-badge" alt="github ci workflow">
+    </a>
+</p>
 
 NodeSecure utilities.
 
