@@ -20,9 +20,7 @@
     "coverage": "c8 -r html npm test"
   },
   "files": [
-    "index.d.ts",
-    "index.js",
-    "src"
+    "dist"
   ],
   "repository": {
     "type": "git",
