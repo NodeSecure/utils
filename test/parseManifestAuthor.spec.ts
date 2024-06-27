@@ -2,8 +2,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
 
-import { Maintainer } from "@npm/types";
-
 // Import Internal Dependencies
 import * as utils from "../src/parseManifestAuthor.js";
 
@@ -22,7 +20,7 @@ describe("parseAuthor", () => {
   });
 
   it("should be able to parse an object matching Maintainer type", () => {
-    const author: Maintainer = {
+    const author: utils.ParsedMaintainer = {
       name: "GENTILHOMME Thomas",
       email: "foobar@gmail.com",
       url: "https://example.com/"

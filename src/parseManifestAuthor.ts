@@ -1,13 +1,19 @@
-import { Maintainer } from "@npm/types";
-
 export function manifestAuthorRegex(): RegExp {
   return /^([^<(]+?)?[ \t]*(?:<([^>(]+?)>)?[ \t]*(?:\(([^)]+?)\)|$)/gm;
+}
+
+export type ParsedMaintainer = {
+  name: string;
+  email?: string;
+  url?: string;
 }
 
 /**
  * @see https://docs.npmjs.com/cli/v7/configuring-npm/package-json#people-fields-author-contributors
  */
-export function parseManifestAuthor(manifestAuthorField: string): Maintainer | null {
+export function parseManifestAuthor(
+  manifestAuthorField: string
+): ParsedMaintainer | null {
   if (typeof manifestAuthorField !== "string") {
     throw new TypeError("expected manifestAuthorField to be a string");
   }
@@ -20,7 +26,7 @@ export function parseManifestAuthor(manifestAuthorField: string): Maintainer | n
   if (!match) {
     return null;
   }
-  const author: Maintainer = {
+  const author: ParsedMaintainer = {
     name: match[1]
   };
 
@@ -38,7 +44,7 @@ export function parseManifestAuthor(manifestAuthorField: string): Maintainer | n
   return author;
 }
 
-export function parseAuthor(author: any): Maintainer | null {
+export function parseAuthor(author: any): ParsedMaintainer | null {
   if (typeof author === "string") {
     return parseManifestAuthor(author);
   }
