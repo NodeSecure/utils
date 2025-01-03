@@ -6,7 +6,7 @@ export type ParsedMaintainer = {
   name: string;
   email?: string;
   url?: string;
-}
+};
 
 /**
  * @see https://docs.npmjs.com/cli/v7/configuring-npm/package-json#people-fields-author-contributors
