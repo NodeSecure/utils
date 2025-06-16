@@ -40,7 +40,7 @@
   "devDependencies": {
     "@openally/config.eslint": "^2.0.0",
     "@openally/config.typescript": "^1.0.3",
-    "@types/node": "^22.5.5",
+    "@types/node": "^24.0.1",
     "c8": "^10.1.2",
     "glob": "^11.0.0",
     "tsx": "^4.7.1",
